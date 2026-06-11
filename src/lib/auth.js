@@ -10,7 +10,16 @@ export const auth = betterAuth({
     // Optional: if you don't provide a client, database transactions won't be enabled.
     client
   }),
-   emailAndPassword: { 
+  emailAndPassword: { 
     enabled: true, 
   },
+  user: {
+    additionalFields: {
+      role: {
+        type: "string",
+        defaultValue: "seeker", // ডিফল্ট ভ্যালু হিসেবে 'seeker' থাকবে
+        input: true             // ফ্রন্টএন্ড থেকে ইনপুট নেওয়ার অনুমতি দেয়
+      } 
+    }
+  }
 });
